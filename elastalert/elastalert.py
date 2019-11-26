@@ -1453,6 +1453,7 @@ class ElastAlerter(object):
             self.handle_uncaught_exception(e, rule)
 
     def send_alert(self, matches, rule, alert_time=None, retried=False):
+        self.thread_data.alerts_sent = 0
         """ Send out an alert.
 
         :param matches: A list of matches.
